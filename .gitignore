@@ -1,0 +1,15 @@
+# IDEA #
+.idea/
+*.iml
+
+
+# Eclipse #
+.project
+.classpath
+.settings/
+
+
+target/
+# bin/
+
+.DS_Store
