@@ -7,18 +7,27 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>CounterRateLimit</p>
+ * <p>普通计数限流（单窗口）</p>
  *
  * @author wangjn
  * @since 2019-09-30
  */
 public class CounterRateLimit implements RateLimit , Runnable {
 
+    /**
+     * 阈值
+     */
     private Integer limitCount;
 
+    /**
+     * 当前通过请求数
+     */
     private AtomicInteger passCount;
 
+    /**
+     * 统计时间间隔
+     */
     private long period;
-
     private TimeUnit timeUnit;
 
     private ScheduledExecutorService scheduledExecutorService;
@@ -44,7 +53,7 @@ public class CounterRateLimit implements RateLimit , Runnable {
         return true;
     }
 
-    public void startResetTask() {
+    private void startResetTask() {
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
         scheduledExecutorService.scheduleAtFixedRate(this, 0, period, timeUnit);
     }
@@ -52,22 +61,5 @@ public class CounterRateLimit implements RateLimit , Runnable {
     @Override
     public void run() {
         passCount.set(0);
-    }
-
-
-
-    //------------------------------ test ------------------------------//
-
-    public static void main(String[] args) {
-
-        RateLimit rateLimit = new CounterRateLimit(20);
-        for (int i = 0; i<50; i++) {
-            try {
-                rateLimit.canPass();
-                System.out.println("request pass !!!");
-            } catch (BlockException e) {
-               System.out.println("request block !!!");
-            }
-        }
     }
 }
