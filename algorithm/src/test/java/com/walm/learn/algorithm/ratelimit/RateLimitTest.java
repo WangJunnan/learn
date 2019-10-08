@@ -2,6 +2,9 @@ package com.walm.learn.algorithm.ratelimit;
 
 import org.junit.Test;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * <p>RateLimitTest</p>
  *
@@ -39,5 +42,23 @@ public class RateLimitTest {
                 Thread.sleep(40);
             }
         }
+    }
+
+    @Test
+    public void LeakyBucketRateLimitTest() throws InterruptedException {
+        RateLimit rateLimit = new LeakyBucketRateLimit(10, 5);
+        ExecutorService threadPool = Executors.newCachedThreadPool();
+        for (int i = 0; i< 20; i++) {
+            threadPool.execute(() -> {
+                try {
+                    rateLimit.canPass();
+                    System.out.println("request pass !!!");
+                } catch (BlockException e) {
+                    System.out.println("request block !!!");
+                }
+            });
+            Thread.sleep(10);
+        }
+        Thread.sleep(60 * 1000);
     }
 }
