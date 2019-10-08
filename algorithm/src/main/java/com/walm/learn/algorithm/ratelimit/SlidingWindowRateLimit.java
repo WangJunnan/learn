@@ -109,15 +109,4 @@ public class SlidingWindowRateLimit implements RateLimit, Runnable {
             this.passCount = new AtomicInteger(0);
         }
     }
-
-    public static void main(String[] args) {
-        System.out.println(5 % 5);
-        AtomicInteger integer = new AtomicInteger();
-        int a = integer.incrementAndGet();
-        System.out.println(a);
-        a = integer.getAndSet(0);
-        System.out.println(a);
-        a = integer.getAndSet(0);
-        System.out.println(a);
-    }
 }
