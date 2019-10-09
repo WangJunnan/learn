@@ -15,7 +15,13 @@ import java.util.concurrent.locks.LockSupport;
 @Slf4j
 public class LeakyBucketRateLimit implements RateLimit, Runnable {
 
+    /**
+     * 出口限制qps
+     */
     private Integer limitSecond;
+    /**
+     * 漏桶队列
+     */
     private BlockingQueue<Thread> leakyBucket;
 
     private ScheduledExecutorService scheduledExecutorService;

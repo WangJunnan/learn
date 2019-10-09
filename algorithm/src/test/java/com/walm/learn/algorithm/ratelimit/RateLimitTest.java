@@ -61,4 +61,22 @@ public class RateLimitTest {
         }
         Thread.sleep(60 * 1000);
     }
+
+    @Test
+    public void TokenBucketRateLimitTest() throws InterruptedException {
+        RateLimit rateLimit = new TokenBucketRateLimit(10, 20);
+        ExecutorService threadPool = Executors.newCachedThreadPool();
+        for (int i = 0; i< 20; i++) {
+            threadPool.execute(() -> {
+                try {
+                    rateLimit.canPass();
+                    System.out.println("request pass !!!");
+                } catch (BlockException e) {
+                    System.out.println("request block !!!");
+                }
+            });
+            Thread.sleep(10);
+        }
+        Thread.sleep(60 * 1000);
+    }
 }
