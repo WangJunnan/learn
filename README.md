@@ -31,5 +31,6 @@
 * [双指针-删除链表的第N个节点(19).md](leetcode/post/双指针-删除链表的第N个节点(19).md)
 * [双指针-三个数字相加等于零(15).md](leetcode/post/双指针-三个数字相加等于零(15).md)
 * [双指针-不重复最长子串.md](leetcode/post/双指针-不重复最长子串.md)
+* [LRUCache-双向链表(146).md](leetcode/post/LRUCache-双向链表(146).md)
 
 ### hard
