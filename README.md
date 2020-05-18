@@ -34,5 +34,6 @@
 * [LRUCache-双向链表(146).md](leetcode/post/LRUCache-双向链表(146).md)
 * [网格最短路径-DP(64).md](leetcode/post/网格最短路径-DP(64).md)
 * [WordSearch-回溯-79.md](leetcode/post/WordSearch-回溯-79.md)
+* [1到N-K个数排列组合.md](leetcode/post/1到N-K个数排列组合.md)
 
 ### hard
