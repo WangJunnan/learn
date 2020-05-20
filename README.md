@@ -20,6 +20,7 @@
 * [罗马数字转整数(13).md](leetcode/post/罗马数字转整数(13).md)
 * [树-从有序数组构建一颗二叉搜索树(面试).md](leetcode/post/树-从有序数组构建一颗二叉搜索树(面试).md)
 * [两数相加TwoSum.md](leetcode/post/TwoSum(1).md)
+* [删除排序数组中的重复项-双指针(26).md](leetcode/post/删除排序数组中的重复项-双指针(26).md)
 
 ### mid
 
