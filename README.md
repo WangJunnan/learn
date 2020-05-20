@@ -35,5 +35,6 @@
 * [网格最短路径-DP(64).md](leetcode/post/网格最短路径-DP(64).md)
 * [WordSearch-回溯-79.md](leetcode/post/WordSearch-回溯-79.md)
 * [1到N-K个数排列组合.md](leetcode/post/1到N-K个数排列组合.md)
+* [数组所有不重复子集-组合-回溯(78).md](leetcode/post/数组所有不重复子集-组合-回溯(78).md)
 
 ### hard
