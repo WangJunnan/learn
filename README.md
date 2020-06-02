@@ -37,5 +37,6 @@
 * [WordSearch-回溯-79.md](leetcode/post/WordSearch-回溯-79.md)
 * [1到N-K个数排列组合.md](leetcode/post/1到N-K个数排列组合.md)
 * [数组所有不重复子集-组合-回溯(78).md](leetcode/post/数组所有不重复子集-组合-回溯(78).md)
+* [WordBreak_动态规划(139).md](leetcode/post/WordBreak_动态规划(139).md)
 
 ### hard
